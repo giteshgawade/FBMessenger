@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  FriendsController.h
 //  FBMessenger
 //
 //  Created by Gitesh Gawade on 15/10/16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface FriendsController : UICollectionViewController
 
 @end
-

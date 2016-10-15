@@ -9,13 +9,12 @@
 /* Begin PBXBuildFile section */
 		66E731121DB2958C007C3FB0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E731111DB2958C007C3FB0 /* main.m */; };
 		66E731151DB2958C007C3FB0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E731141DB2958C007C3FB0 /* AppDelegate.m */; };
-		66E731181DB2958C007C3FB0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E731171DB2958C007C3FB0 /* ViewController.m */; };
-		66E7311B1DB2958C007C3FB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66E731191DB2958C007C3FB0 /* Main.storyboard */; };
 		66E7311E1DB2958C007C3FB0 /* FBMessenger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 66E7311C1DB2958C007C3FB0 /* FBMessenger.xcdatamodeld */; };
 		66E731201DB2958C007C3FB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66E7311F1DB2958C007C3FB0 /* Assets.xcassets */; };
 		66E731231DB2958C007C3FB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66E731211DB2958C007C3FB0 /* LaunchScreen.storyboard */; };
 		66E7312E1DB2958D007C3FB0 /* FBMessengerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E7312D1DB2958D007C3FB0 /* FBMessengerTests.m */; };
 		66E731391DB2958D007C3FB0 /* FBMessengerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E731381DB2958D007C3FB0 /* FBMessengerUITests.m */; };
+		66EA18741DB2A00900F8D0E7 /* FriendsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EA18731DB2A00900F8D0E7 /* FriendsController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,9 +39,6 @@
 		66E731111DB2958C007C3FB0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		66E731131DB2958C007C3FB0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		66E731141DB2958C007C3FB0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		66E731161DB2958C007C3FB0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		66E731171DB2958C007C3FB0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		66E7311A1DB2958C007C3FB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		66E7311D1DB2958C007C3FB0 /* FBMessenger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FBMessenger.xcdatamodel; sourceTree = "<group>"; };
 		66E7311F1DB2958C007C3FB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		66E731221DB2958C007C3FB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +49,8 @@
 		66E731341DB2958D007C3FB0 /* FBMessengerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FBMessengerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		66E731381DB2958D007C3FB0 /* FBMessengerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBMessengerUITests.m; sourceTree = "<group>"; };
 		66E7313A1DB2958D007C3FB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66EA18721DB2A00900F8D0E7 /* FriendsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsController.h; sourceTree = "<group>"; };
+		66EA18731DB2A00900F8D0E7 /* FriendsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,11 +101,13 @@
 		66E7310F1DB2958C007C3FB0 /* FBMessenger */ = {
 			isa = PBXGroup;
 			children = (
+				66E731461DB295FA007C3FB0 /* APIService */,
+				66E731471DB295FA007C3FB0 /* Controller */,
+				66E731481DB295FA007C3FB0 /* Helpers */,
+				66E731491DB295FA007C3FB0 /* Models */,
+				66E7314A1DB295FA007C3FB0 /* Views */,
 				66E731131DB2958C007C3FB0 /* AppDelegate.h */,
 				66E731141DB2958C007C3FB0 /* AppDelegate.m */,
-				66E731161DB2958C007C3FB0 /* ViewController.h */,
-				66E731171DB2958C007C3FB0 /* ViewController.m */,
-				66E731191DB2958C007C3FB0 /* Main.storyboard */,
 				66E7311F1DB2958C007C3FB0 /* Assets.xcassets */,
 				66E731211DB2958C007C3FB0 /* LaunchScreen.storyboard */,
 				66E731241DB2958D007C3FB0 /* Info.plist */,
@@ -141,6 +141,43 @@
 				66E7313A1DB2958D007C3FB0 /* Info.plist */,
 			);
 			path = FBMessengerUITests;
+			sourceTree = "<group>";
+		};
+		66E731461DB295FA007C3FB0 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
+		66E731471DB295FA007C3FB0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				66EA18721DB2A00900F8D0E7 /* FriendsController.h */,
+				66EA18731DB2A00900F8D0E7 /* FriendsController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		66E731481DB295FA007C3FB0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		66E731491DB295FA007C3FB0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		66E7314A1DB295FA007C3FB0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,7 +285,6 @@
 			files = (
 				66E731231DB2958C007C3FB0 /* LaunchScreen.storyboard in Resources */,
 				66E731201DB2958C007C3FB0 /* Assets.xcassets in Resources */,
-				66E7311B1DB2958C007C3FB0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,8 +309,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66E731181DB2958C007C3FB0 /* ViewController.m in Sources */,
 				66E7311E1DB2958C007C3FB0 /* FBMessenger.xcdatamodeld in Sources */,
+				66EA18741DB2A00900F8D0E7 /* FriendsController.m in Sources */,
 				66E731151DB2958C007C3FB0 /* AppDelegate.m in Sources */,
 				66E731121DB2958C007C3FB0 /* main.m in Sources */,
 			);
@@ -312,14 +348,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		66E731191DB2958C007C3FB0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				66E7311A1DB2958C007C3FB0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		66E731211DB2958C007C3FB0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -502,6 +530,7 @@
 				66E7313F1DB2958D007C3FB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		66E731401DB2958D007C3FB0 /* Build configuration list for PBXNativeTarget "FBMessengerTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +539,7 @@
 				66E731421DB2958D007C3FB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		66E731431DB2958D007C3FB0 /* Build configuration list for PBXNativeTarget "FBMessengerUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +548,7 @@
 				66E731451DB2958D007C3FB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
