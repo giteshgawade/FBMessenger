@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FriendsCell.h"
 
-@interface FriendsController : UICollectionViewController
+@interface FriendsController : UICollectionViewController <UICollectionViewDelegateFlowLayout>
 
 @end
+
