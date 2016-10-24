@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6600F5B61DBB5018003A47EE /* BaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6600F5B51DBB5018003A47EE /* BaseCell.m */; settings = {ASSET_TAGS = (); }; };
-		6600F5B91DBB5061003A47EE /* FriendsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6600F5B81DBB5061003A47EE /* FriendsCell.m */; settings = {ASSET_TAGS = (); }; };
+		6600F5B91DBB5061003A47EE /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6600F5B81DBB5061003A47EE /* MessageCell.m */; settings = {ASSET_TAGS = (); }; };
 		6600F5BC1DBB53F6003A47EE /* UIView+LayoutConstraints.m in Sources */ = {isa = PBXBuildFile; fileRef = 6600F5BB1DBB53F6003A47EE /* UIView+LayoutConstraints.m */; settings = {ASSET_TAGS = (); }; };
 		66E731121DB2958C007C3FB0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E731111DB2958C007C3FB0 /* main.m */; };
 		66E731151DB2958C007C3FB0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E731141DB2958C007C3FB0 /* AppDelegate.m */; };
@@ -18,6 +18,7 @@
 		66E7312E1DB2958D007C3FB0 /* FBMessengerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E7312D1DB2958D007C3FB0 /* FBMessengerTests.m */; };
 		66E731391DB2958D007C3FB0 /* FBMessengerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E731381DB2958D007C3FB0 /* FBMessengerUITests.m */; };
 		66EA18741DB2A00900F8D0E7 /* FriendsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EA18731DB2A00900F8D0E7 /* FriendsController.m */; settings = {ASSET_TAGS = (); }; };
+		66F020351DBE90D6000F3690 /* FriendsControllerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F020341DBE90D6000F3690 /* FriendsControllerHelper.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +41,8 @@
 /* Begin PBXFileReference section */
 		6600F5B41DBB5018003A47EE /* BaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCell.h; sourceTree = "<group>"; };
 		6600F5B51DBB5018003A47EE /* BaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCell.m; sourceTree = "<group>"; };
-		6600F5B71DBB5061003A47EE /* FriendsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsCell.h; sourceTree = "<group>"; };
-		6600F5B81DBB5061003A47EE /* FriendsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsCell.m; sourceTree = "<group>"; };
+		6600F5B71DBB5061003A47EE /* MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = "<group>"; };
+		6600F5B81DBB5061003A47EE /* MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = "<group>"; };
 		6600F5BA1DBB53F6003A47EE /* UIView+LayoutConstraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LayoutConstraints.h"; sourceTree = "<group>"; };
 		6600F5BB1DBB53F6003A47EE /* UIView+LayoutConstraints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LayoutConstraints.m"; sourceTree = "<group>"; };
 		66E7310D1DB2958C007C3FB0 /* FBMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +61,8 @@
 		66E7313A1DB2958D007C3FB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66EA18721DB2A00900F8D0E7 /* FriendsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsController.h; sourceTree = "<group>"; };
 		66EA18731DB2A00900F8D0E7 /* FriendsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsController.m; sourceTree = "<group>"; };
+		66F020331DBE90D6000F3690 /* FriendsControllerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsControllerHelper.h; sourceTree = "<group>"; };
+		66F020341DBE90D6000F3690 /* FriendsControllerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsControllerHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +176,8 @@
 			children = (
 				6600F5BA1DBB53F6003A47EE /* UIView+LayoutConstraints.h */,
 				6600F5BB1DBB53F6003A47EE /* UIView+LayoutConstraints.m */,
+				66F020331DBE90D6000F3690 /* FriendsControllerHelper.h */,
+				66F020341DBE90D6000F3690 /* FriendsControllerHelper.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -189,8 +194,8 @@
 			children = (
 				6600F5B41DBB5018003A47EE /* BaseCell.h */,
 				6600F5B51DBB5018003A47EE /* BaseCell.m */,
-				6600F5B71DBB5061003A47EE /* FriendsCell.h */,
-				6600F5B81DBB5061003A47EE /* FriendsCell.m */,
+				6600F5B71DBB5061003A47EE /* MessageCell.h */,
+				6600F5B81DBB5061003A47EE /* MessageCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -327,10 +332,11 @@
 				66E7311E1DB2958C007C3FB0 /* FBMessenger.xcdatamodeld in Sources */,
 				66EA18741DB2A00900F8D0E7 /* FriendsController.m in Sources */,
 				6600F5B61DBB5018003A47EE /* BaseCell.m in Sources */,
+				66F020351DBE90D6000F3690 /* FriendsControllerHelper.m in Sources */,
 				66E731151DB2958C007C3FB0 /* AppDelegate.m in Sources */,
 				6600F5BC1DBB53F6003A47EE /* UIView+LayoutConstraints.m in Sources */,
 				66E731121DB2958C007C3FB0 /* main.m in Sources */,
-				6600F5B91DBB5061003A47EE /* FriendsCell.m in Sources */,
+				6600F5B91DBB5061003A47EE /* MessageCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,12 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "BaseCell.h"
 #import "UIView+LayoutConstraints.h"
+#import "FriendsControllerHelper.h"
 
-@interface FriendsCell : BaseCell
+@interface MessageCell : BaseCell
 {
     UIImageView *profileImageView, *hasReadImageView;
     UILabel *nameLabel, *messageLabel, *timeLabel;
     UIView *dividerLineView, *containerView;
 }
+
+@property(nonatomic,strong) Message *message;
 
 @end
