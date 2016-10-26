@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+//#import <CoreData/CoreData.h>
+
+#import "Friend.h"
 #import "MessageCell.h"
+#import "AppDelegate.h"
 
 @interface FriendsController : UICollectionViewController <UICollectionViewDelegateFlowLayout>
 

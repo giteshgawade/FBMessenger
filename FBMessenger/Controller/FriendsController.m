@@ -11,6 +11,7 @@
 @interface FriendsController ()
 {
     NSMutableArray *messages;
+    NSManagedObjectContext *context;
 }
 @end
 
@@ -30,32 +31,74 @@ static NSString * const cellId = @"Cell";
     [self setupData];
 }
 
+-(void)clearData
+{
+    NSError *error = nil;
+    
+    NSArray *entityNames = @[@"Friend",@"Message"];
+    for (NSString *entityName in entityNames) {
+        NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:entityName];
+        NSArray *objects = [context executeFetchRequest:request error:&error];
+        
+        for (NSManagedObject *object in objects) {
+            @try {
+                [context delete:object];
+            }
+            @catch (NSException *exception) {
+                NSLog(@"%@",exception);
+            }
+        }
+    }
+    [context save:&error];
+}
+
+-(void)loadData
+{
+    NSError *error = nil;
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Message"];
+    @try {
+        messages = (NSMutableArray *)[context executeFetchRequest:request error:&error];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"%@",exception);
+    }
+}
+
 -(void)setupData
 {
     messages = [[NSMutableArray alloc] init];
-    
-    Friend *mark = [[Friend alloc] init];
-    mark.name = @"Mark Zuckerberg";
-    mark.profileImageName = @"zuckprofile";
-    
-    Message *message = [[Message alloc] init];
-    message.text = @"Hi... this is Mark From FB...";
-    message.date = [[NSDate alloc] init];
-    message.friend = mark;
-    
-    Friend *steve = [[Friend alloc] init];
-    steve.name = @"Steve Jobs";
-    steve.profileImageName = @"zuckprofile";
-    
-    Message *messageSteve = [[Message alloc] init];
-    messageSteve.text = @"Hi... this is Steve From Apple...";
-    messageSteve.date = [[NSDate alloc] init];
-    messageSteve.friend = steve;
-
-    
-    [messages addObject:message];
-    [messages addObject:messageSteve];
-
+    // Clear previous data so as to avoid duplication
+    [self clearData];
+ 
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    context = delegate.managedObjectContext;
+  
+    if (context != nil)
+    {
+        Friend *mark = (Friend *)[NSEntityDescription insertNewObjectForEntityForName:@"Friend" inManagedObjectContext:context];
+        mark.name = @"Mark Zuckerberg";
+        mark.profileImageName = @"zuckprofile";
+        
+        Message *message = (Message *)[NSEntityDescription insertNewObjectForEntityForName:@"Message" inManagedObjectContext:context];
+        message.text = @"Hi... this is Mark From FB...";
+        message.date = [[NSDate alloc] init];
+        message.friend = mark;
+        
+        Friend *steve = (Friend *)[NSEntityDescription insertNewObjectForEntityForName:@"Friend" inManagedObjectContext:context];;
+        steve.name = @"Steve Jobs";
+        steve.profileImageName = @"zuckprofile";
+        
+        Message *messageSteve = (Message *)[NSEntityDescription insertNewObjectForEntityForName:@"Message" inManagedObjectContext:context];
+        messageSteve.text = @"Hi... this is Steve From Apple...";
+        messageSteve.date = [[NSDate alloc] init];
+        messageSteve.friend = steve;
+        
+//        [messages addObject:message];
+//        [messages addObject:messageSteve];
+        
+        [self loadData];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -90,18 +133,5 @@ static NSString * const cellId = @"Cell";
 {
     return CGSizeMake(self.view.frame.size.width, 100);
 }
-
-@end
-
-
-@implementation Friend
-
-@synthesize name, profileImageName;
-
-@end
-
-@implementation Message
-
-@synthesize text,date,friend;
 
 @end

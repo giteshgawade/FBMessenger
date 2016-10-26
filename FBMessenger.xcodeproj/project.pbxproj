@@ -18,6 +18,10 @@
 		66E7312E1DB2958D007C3FB0 /* FBMessengerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E7312D1DB2958D007C3FB0 /* FBMessengerTests.m */; };
 		66E731391DB2958D007C3FB0 /* FBMessengerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E731381DB2958D007C3FB0 /* FBMessengerUITests.m */; };
 		66EA18741DB2A00900F8D0E7 /* FriendsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EA18731DB2A00900F8D0E7 /* FriendsController.m */; settings = {ASSET_TAGS = (); }; };
+		66EAFE5F1DBFE57700262621 /* Message+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EAFE581DBFE57700262621 /* Message+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		66EAFE601DBFE57700262621 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EAFE5A1DBFE57700262621 /* Message.m */; settings = {ASSET_TAGS = (); }; };
+		66EAFE611DBFE57700262621 /* Friend+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EAFE5C1DBFE57700262621 /* Friend+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		66EAFE621DBFE57700262621 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EAFE5E1DBFE57700262621 /* Friend.m */; settings = {ASSET_TAGS = (); }; };
 		66F020351DBE90D6000F3690 /* FriendsControllerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F020341DBE90D6000F3690 /* FriendsControllerHelper.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -61,6 +65,14 @@
 		66E7313A1DB2958D007C3FB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66EA18721DB2A00900F8D0E7 /* FriendsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsController.h; sourceTree = "<group>"; };
 		66EA18731DB2A00900F8D0E7 /* FriendsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsController.m; sourceTree = "<group>"; };
+		66EAFE571DBFE57700262621 /* Message+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Message+CoreDataProperties.h"; sourceTree = "<group>"; };
+		66EAFE581DBFE57700262621 /* Message+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Message+CoreDataProperties.m"; sourceTree = "<group>"; };
+		66EAFE591DBFE57700262621 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		66EAFE5A1DBFE57700262621 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		66EAFE5B1DBFE57700262621 /* Friend+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Friend+CoreDataProperties.h"; sourceTree = "<group>"; };
+		66EAFE5C1DBFE57700262621 /* Friend+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Friend+CoreDataProperties.m"; sourceTree = "<group>"; };
+		66EAFE5D1DBFE57700262621 /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
+		66EAFE5E1DBFE57700262621 /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
 		66F020331DBE90D6000F3690 /* FriendsControllerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsControllerHelper.h; sourceTree = "<group>"; };
 		66F020341DBE90D6000F3690 /* FriendsControllerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsControllerHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,6 +197,14 @@
 		66E731491DB295FA007C3FB0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				66EAFE571DBFE57700262621 /* Message+CoreDataProperties.h */,
+				66EAFE581DBFE57700262621 /* Message+CoreDataProperties.m */,
+				66EAFE591DBFE57700262621 /* Message.h */,
+				66EAFE5A1DBFE57700262621 /* Message.m */,
+				66EAFE5B1DBFE57700262621 /* Friend+CoreDataProperties.h */,
+				66EAFE5C1DBFE57700262621 /* Friend+CoreDataProperties.m */,
+				66EAFE5D1DBFE57700262621 /* Friend.h */,
+				66EAFE5E1DBFE57700262621 /* Friend.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -332,9 +352,13 @@
 				66E7311E1DB2958C007C3FB0 /* FBMessenger.xcdatamodeld in Sources */,
 				66EA18741DB2A00900F8D0E7 /* FriendsController.m in Sources */,
 				6600F5B61DBB5018003A47EE /* BaseCell.m in Sources */,
+				66EAFE621DBFE57700262621 /* Friend.m in Sources */,
+				66EAFE5F1DBFE57700262621 /* Message+CoreDataProperties.m in Sources */,
 				66F020351DBE90D6000F3690 /* FriendsControllerHelper.m in Sources */,
+				66EAFE611DBFE57700262621 /* Friend+CoreDataProperties.m in Sources */,
 				66E731151DB2958C007C3FB0 /* AppDelegate.m in Sources */,
 				6600F5BC1DBB53F6003A47EE /* UIView+LayoutConstraints.m in Sources */,
+				66EAFE601DBFE57700262621 /* Message.m in Sources */,
 				66E731121DB2958C007C3FB0 /* main.m in Sources */,
 				6600F5B91DBB5061003A47EE /* MessageCell.m in Sources */,
 			);

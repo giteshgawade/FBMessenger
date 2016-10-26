@@ -12,18 +12,18 @@
 
 @end
 
-@interface Friend : NSObject
-
-@property(nonatomic,strong) NSString *name;
-@property(nonatomic,strong) NSString *profileImageName;
-
-@end
-
-@interface Message : NSObject
-
-@property(nonatomic,strong) NSString *text;
-@property(nonatomic,strong) NSDate *date;
-
-@property(nonatomic,strong) Friend *friend;
-
-@end
+//@interface Friend : NSObject
+//
+//@property(nonatomic,strong) NSString *name;
+//@property(nonatomic,strong) NSString *profileImageName;
+//
+//@end
+//
+//@interface Message : NSObject
+//
+//@property(nonatomic,strong) NSString *text;
+//@property(nonatomic,strong) NSDate *date;
+//
+//@property(nonatomic,strong) Friend *friend;
+//
+//@end

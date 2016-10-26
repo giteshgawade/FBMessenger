@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "BaseCell.h"
 #import "UIView+LayoutConstraints.h"
-#import "FriendsControllerHelper.h"
+#import "Message.h"
+#import "Message+CoreDataProperties.h"
+#import "Friend.h"
+#import "Friend+CoreDataProperties.h"
+
 
 @interface MessageCell : BaseCell
 {
