@@ -51,6 +51,7 @@
     messageLabel.translatesAutoresizingMaskIntoConstraints = false;
     messageLabel.textColor = [UIColor darkGrayColor];
     messageLabel.font = [UIFont systemFontOfSize:14];
+    messageLabel.numberOfLines = 2;
     
     timeLabel = [[UILabel alloc] init];
     timeLabel.translatesAutoresizingMaskIntoConstraints = false;

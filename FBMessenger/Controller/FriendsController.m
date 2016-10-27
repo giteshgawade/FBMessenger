@@ -11,6 +11,7 @@
 @interface FriendsController ()
 {
     NSMutableArray *messages;
+    NSManagedObjectContext *context;
     AppDelegate *delegate;
 }
 @end
@@ -23,7 +24,8 @@ static NSString * const cellId = @"Cell";
     [super viewDidLoad];
     
     delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-
+    context = delegate.managedObjectContext;
+    
     // Register cell classes
     [self.collectionView registerClass:[MessageCell class] forCellWithReuseIdentifier:cellId];
 
@@ -36,9 +38,7 @@ static NSString * const cellId = @"Cell";
 -(void)clearData
 {
     NSError *error = nil;
-
-    NSManagedObjectContext *context = delegate.managedObjectContext;
-
+    
     NSArray *entityNames = @[@"Friend",@"Message"];
     for (NSString *entityName in entityNames) {
         NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:entityName];
@@ -60,28 +60,22 @@ static NSString * const cellId = @"Cell";
 
 -(void)loadData
 {
-    NSError *error = nil;
-    messages = [[NSMutableArray alloc] init];
-
-    NSManagedObjectContext *context = delegate.managedObjectContext;
-
-
     NSArray *friends = [self fetchFriends];
     if (friends.count != 0)
     {
+        messages = [[NSMutableArray alloc] init];
+        NSError *error = nil;
+
         for (Friend *friend in friends)
         {
             NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Message"];
-            messages = (NSMutableArray *)[context executeFetchRequest:request error:&error];
             request.sortDescriptors =@[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:false]];
             request.predicate = [NSPredicate predicateWithFormat:@"friend.name = %@", friend.name];
             request.fetchLimit = 1;
+            
             @try {
-                NSArray *fetchedRequest = (NSArray *)[context executeFetchRequest:request error:&error];
-                Message *msg = fetchedRequest[0];
-                NSLog(@"Text = %@",msg.text);
-                [messages addObject:fetchedRequest];
-//                messages = (NSMutableArray *)[context executeFetchRequest:request error:&error];
+               NSArray *fetchedRequest = (NSArray *)[context executeFetchRequest:request error:&error];
+                [messages addObject:(Message *)fetchedRequest[0]];
             }
             @catch (NSException *exception) {
                 NSLog(@"%@",exception);
@@ -94,7 +88,6 @@ static NSString * const cellId = @"Cell";
 {
     NSError *error = nil;
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Friend"];
-    NSManagedObjectContext *context = delegate.managedObjectContext;
 
     @try{
         NSArray *friendsArray = (NSArray *)[context executeFetchRequest:request error:&error];
@@ -110,7 +103,6 @@ static NSString * const cellId = @"Cell";
 {
     NSError *error = nil;
     
-    NSManagedObjectContext *context = delegate.managedObjectContext;
     // Clear previous data so as to avoid duplication
     [self clearData];
  
@@ -121,26 +113,24 @@ static NSString * const cellId = @"Cell";
         mark.name = @"Mark Zuckerberg";
         mark.profileImageName = @"zuckprofile";
         
-        Message *message = (Message *)[NSEntityDescription insertNewObjectForEntityForName:@"Message" inManagedObjectContext:context];
-        message.text = @"Hi... this is Mark From FB...";
-        message.date = [[NSDate alloc] init];
-        message.friend = mark;
-        
         Friend *steve = (Friend *)[NSEntityDescription insertNewObjectForEntityForName:@"Friend" inManagedObjectContext:context];;
         steve.name = @"Steve Jobs";
         steve.profileImageName = @"steve_profile";
 
         
-        [self createMessageWithText:@"Good Morning ..." ofFriend:steve minutesAgo:5 context:context];
-        [self createMessageWithText:@"How Are You ??" ofFriend:steve minutesAgo:2 context:context];
-        [self createMessageWithText:@"Apple manufactures smartest phones in the world !!" ofFriend:steve minutesAgo:0 context:context];
+        [self createMessageWithText:@"Hi... this is Mark From FB" ofFriend:mark minutesAgo:5 context:context]; // Mark
+        [self createMessageWithText:@"Good Morning ..." ofFriend:steve minutesAgo:5 context:context]; //  Steve
+        [self createMessageWithText:@"How Are You ??" ofFriend:steve minutesAgo:2 context:context]; // Steve
+        [self createMessageWithText:@"Apple manufactures smartest phones in the world !!" ofFriend:steve minutesAgo:0 context:context]; // Steve
         
+        // Save the context to save the messages
         @try {
             [context save:&error];
         } @catch (NSException *exception) {
             
         }
         
+        // Load the data to the messages array
         [self loadData];
     }
 }
@@ -148,17 +138,16 @@ static NSString * const cellId = @"Cell";
 
 -(void)createMessageWithText:(NSString *)text ofFriend:(Friend *)friend minutesAgo:(double)minutesAgo context:(NSManagedObjectContext *)contextObj
 {
-    Message *messageSteve = (Message *)[NSEntityDescription insertNewObjectForEntityForName:@"Message" inManagedObjectContext:contextObj];
-    messageSteve.text = text;
-    messageSteve.date = [NSDate dateWithTimeIntervalSinceNow:-minutesAgo * 60];
-    messageSteve.friend = friend;
+    Message *message = (Message *)[NSEntityDescription insertNewObjectForEntityForName:@"Message" inManagedObjectContext:contextObj];
+    message.text = text;
+    message.date = [NSDate dateWithTimeIntervalSinceNow:-minutesAgo * 60];
+    message.friend = friend;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
     return 1;
 }
-
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
