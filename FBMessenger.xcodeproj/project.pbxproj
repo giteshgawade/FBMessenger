@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6600F5B61DBB5018003A47EE /* BaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6600F5B51DBB5018003A47EE /* BaseCell.m */; settings = {ASSET_TAGS = (); }; };
-		6600F5B91DBB5061003A47EE /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6600F5B81DBB5061003A47EE /* MessageCell.m */; settings = {ASSET_TAGS = (); }; };
-		6600F5BC1DBB53F6003A47EE /* UIView+LayoutConstraints.m in Sources */ = {isa = PBXBuildFile; fileRef = 6600F5BB1DBB53F6003A47EE /* UIView+LayoutConstraints.m */; settings = {ASSET_TAGS = (); }; };
+		6600F5B61DBB5018003A47EE /* BaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6600F5B51DBB5018003A47EE /* BaseCell.m */; };
+		6600F5B91DBB5061003A47EE /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6600F5B81DBB5061003A47EE /* MessageCell.m */; };
+		6600F5BC1DBB53F6003A47EE /* UIView+LayoutConstraints.m in Sources */ = {isa = PBXBuildFile; fileRef = 6600F5BB1DBB53F6003A47EE /* UIView+LayoutConstraints.m */; };
 		66E731121DB2958C007C3FB0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E731111DB2958C007C3FB0 /* main.m */; };
 		66E731151DB2958C007C3FB0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E731141DB2958C007C3FB0 /* AppDelegate.m */; };
 		66E7311E1DB2958C007C3FB0 /* FBMessenger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 66E7311C1DB2958C007C3FB0 /* FBMessenger.xcdatamodeld */; };
@@ -17,12 +17,15 @@
 		66E731231DB2958C007C3FB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66E731211DB2958C007C3FB0 /* LaunchScreen.storyboard */; };
 		66E7312E1DB2958D007C3FB0 /* FBMessengerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E7312D1DB2958D007C3FB0 /* FBMessengerTests.m */; };
 		66E731391DB2958D007C3FB0 /* FBMessengerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E731381DB2958D007C3FB0 /* FBMessengerUITests.m */; };
-		66EA18741DB2A00900F8D0E7 /* FriendsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EA18731DB2A00900F8D0E7 /* FriendsController.m */; settings = {ASSET_TAGS = (); }; };
-		66EAFE5F1DBFE57700262621 /* Message+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EAFE581DBFE57700262621 /* Message+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		66EAFE601DBFE57700262621 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EAFE5A1DBFE57700262621 /* Message.m */; settings = {ASSET_TAGS = (); }; };
-		66EAFE611DBFE57700262621 /* Friend+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EAFE5C1DBFE57700262621 /* Friend+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		66EAFE621DBFE57700262621 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EAFE5E1DBFE57700262621 /* Friend.m */; settings = {ASSET_TAGS = (); }; };
-		66F020351DBE90D6000F3690 /* FriendsControllerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F020341DBE90D6000F3690 /* FriendsControllerHelper.m */; settings = {ASSET_TAGS = (); }; };
+		66EA18741DB2A00900F8D0E7 /* FriendsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EA18731DB2A00900F8D0E7 /* FriendsController.m */; };
+		66EAFE5F1DBFE57700262621 /* Message+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EAFE581DBFE57700262621 /* Message+CoreDataProperties.m */; };
+		66EAFE601DBFE57700262621 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EAFE5A1DBFE57700262621 /* Message.m */; };
+		66EAFE611DBFE57700262621 /* Friend+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EAFE5C1DBFE57700262621 /* Friend+CoreDataProperties.m */; };
+		66EAFE621DBFE57700262621 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EAFE5E1DBFE57700262621 /* Friend.m */; };
+		66F020351DBE90D6000F3690 /* FriendsControllerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F020341DBE90D6000F3690 /* FriendsControllerHelper.m */; };
+		FF6410031DC87AE500EC1021 /* ChatLogController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6410021DC87AE500EC1021 /* ChatLogController.m */; };
+		FF6410061DC8829F00EC1021 /* ChatLogMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6410051DC8829F00EC1021 /* ChatLogMessageCell.m */; };
+		FFED45BB1DC3453B00E6765D /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFED45BA1DC3453B00E6765D /* CustomTabBarController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,12 @@
 		66EAFE5E1DBFE57700262621 /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
 		66F020331DBE90D6000F3690 /* FriendsControllerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsControllerHelper.h; sourceTree = "<group>"; };
 		66F020341DBE90D6000F3690 /* FriendsControllerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsControllerHelper.m; sourceTree = "<group>"; };
+		FF6410011DC87AE500EC1021 /* ChatLogController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatLogController.h; sourceTree = "<group>"; };
+		FF6410021DC87AE500EC1021 /* ChatLogController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatLogController.m; sourceTree = "<group>"; };
+		FF6410041DC8829F00EC1021 /* ChatLogMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatLogMessageCell.h; sourceTree = "<group>"; };
+		FF6410051DC8829F00EC1021 /* ChatLogMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatLogMessageCell.m; sourceTree = "<group>"; };
+		FFED45B91DC3453B00E6765D /* CustomTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabBarController.h; sourceTree = "<group>"; };
+		FFED45BA1DC3453B00E6765D /* CustomTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabBarController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +188,10 @@
 			children = (
 				66EA18721DB2A00900F8D0E7 /* FriendsController.h */,
 				66EA18731DB2A00900F8D0E7 /* FriendsController.m */,
+				FFED45B91DC3453B00E6765D /* CustomTabBarController.h */,
+				FFED45BA1DC3453B00E6765D /* CustomTabBarController.m */,
+				FF6410011DC87AE500EC1021 /* ChatLogController.h */,
+				FF6410021DC87AE500EC1021 /* ChatLogController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -216,6 +229,8 @@
 				6600F5B51DBB5018003A47EE /* BaseCell.m */,
 				6600F5B71DBB5061003A47EE /* MessageCell.h */,
 				6600F5B81DBB5061003A47EE /* MessageCell.m */,
+				FF6410041DC8829F00EC1021 /* ChatLogMessageCell.h */,
+				FF6410051DC8829F00EC1021 /* ChatLogMessageCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -352,14 +367,17 @@
 				66E7311E1DB2958C007C3FB0 /* FBMessenger.xcdatamodeld in Sources */,
 				66EA18741DB2A00900F8D0E7 /* FriendsController.m in Sources */,
 				6600F5B61DBB5018003A47EE /* BaseCell.m in Sources */,
+				FFED45BB1DC3453B00E6765D /* CustomTabBarController.m in Sources */,
 				66EAFE621DBFE57700262621 /* Friend.m in Sources */,
 				66EAFE5F1DBFE57700262621 /* Message+CoreDataProperties.m in Sources */,
 				66F020351DBE90D6000F3690 /* FriendsControllerHelper.m in Sources */,
 				66EAFE611DBFE57700262621 /* Friend+CoreDataProperties.m in Sources */,
 				66E731151DB2958C007C3FB0 /* AppDelegate.m in Sources */,
 				6600F5BC1DBB53F6003A47EE /* UIView+LayoutConstraints.m in Sources */,
+				FF6410031DC87AE500EC1021 /* ChatLogController.m in Sources */,
 				66EAFE601DBFE57700262621 /* Message.m in Sources */,
 				66E731121DB2958C007C3FB0 /* main.m in Sources */,
+				FF6410061DC8829F00EC1021 /* ChatLogMessageCell.m in Sources */,
 				6600F5B91DBB5061003A47EE /* MessageCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
-#import "FriendsController.h"
+#import "CustomTabBarController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -20,7 +20,6 @@
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
-
 
 @end
 

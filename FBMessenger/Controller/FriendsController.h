@@ -12,6 +12,7 @@
 #import "Friend.h"
 #import "MessageCell.h"
 #import "AppDelegate.h"
+#import "ChatLogController.h"
 
 @interface FriendsController : UICollectionViewController <UICollectionViewDelegateFlowLayout>
 

@@ -99,6 +99,7 @@ static NSString * const cellId = @"Cell";
     return nil;
 }
 
+// Setup data for the collectionview.
 -(void)setupData
 {
     NSError *error = nil;
@@ -109,6 +110,7 @@ static NSString * const cellId = @"Cell";
   
     if (context != nil)
     {
+        // Create Friends
         Friend *mark = (Friend *)[NSEntityDescription insertNewObjectForEntityForName:@"Friend" inManagedObjectContext:context];
         mark.name = @"Mark Zuckerberg";
         mark.profileImageName = @"zuckprofile";
@@ -116,12 +118,17 @@ static NSString * const cellId = @"Cell";
         Friend *steve = (Friend *)[NSEntityDescription insertNewObjectForEntityForName:@"Friend" inManagedObjectContext:context];;
         steve.name = @"Steve Jobs";
         steve.profileImageName = @"steve_profile";
-
         
+        Friend *donald = (Friend *)[NSEntityDescription insertNewObjectForEntityForName:@"Friend" inManagedObjectContext:context];
+        donald.name = @"Donald Trump";
+        donald.profileImageName = @"donald_trump_profile";
+
+        // Create Messages for the friends
         [self createMessageWithText:@"Hi... this is Mark From FB" ofFriend:mark minutesAgo:5 context:context]; // Mark
         [self createMessageWithText:@"Good Morning ..." ofFriend:steve minutesAgo:5 context:context]; //  Steve
         [self createMessageWithText:@"How Are You ??" ofFriend:steve minutesAgo:2 context:context]; // Steve
         [self createMessageWithText:@"Apple manufactures smartest phones in the world !!" ofFriend:steve minutesAgo:0 context:context]; // Steve
+        [self createMessageWithText:@"I wanna be next president !!!" ofFriend:donald minutesAgo:5 context:context];
         
         // Save the context to save the messages
         @try {
@@ -168,6 +175,14 @@ static NSString * const cellId = @"Cell";
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     return CGSizeMake(self.view.frame.size.width, 100);
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    ChatLogController *controller = [[ChatLogController alloc] initWithCollectionViewLayout:layout];
+    controller.friend = [[messages objectAtIndex:indexPath.item] valueForKey:@"friend"];
+    [self.navigationController pushViewController:controller animated:true];
 }
 
 @end

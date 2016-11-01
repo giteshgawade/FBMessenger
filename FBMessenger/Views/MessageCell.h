@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseCell.h"
-#import "UIView+LayoutConstraints.h"
 #import "Message.h"
 #import "Message+CoreDataProperties.h"
 #import "Friend.h"
