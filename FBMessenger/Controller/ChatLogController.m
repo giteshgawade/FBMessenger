@@ -43,10 +43,6 @@ static NSString * const cellId = @"Cell";
     self.navigationItem.title = _friend.name;
 
     messages = [_friend.messages allObjects];
-    for(Message *message in messages)
-    {
-        NSLog(@"Msg = %@", message.text);
-    }
 }
 
 
@@ -66,8 +62,8 @@ static NSString * const cellId = @"Cell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ChatLogMessageCell *cell = (ChatLogMessageCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
-    Message *msg = [messages objectAtIndex:indexPath.item];
-//    cell.messageTextView.text = [[messages objectAtIndex:indexPath.item] valueForKey:@"text"];
+
+    cell.messageTextView.text = [[messages objectAtIndex:indexPath.item] valueForKey:@"text"];
     cell.backgroundColor = [UIColor blueColor];
     
     return cell;
