@@ -7,6 +7,7 @@
 //
 
 #import "ChatLogController.h"
+#import "Message.h"
 
 @interface ChatLogController ()
 {
@@ -43,10 +44,6 @@ static NSString * const cellId = @"Cell";
     self.navigationItem.title = _friend.name;
 
     messages = [_friend.messages allObjects];
-    for(Message *message in messages)
-    {
-        NSLog(@"Msg = %@", message.text);
-    }
 }
 
 
@@ -66,8 +63,10 @@ static NSString * const cellId = @"Cell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ChatLogMessageCell *cell = (ChatLogMessageCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
-    Message *msg = [messages objectAtIndex:indexPath.item];
-//    cell.messageTextView.text = [[messages objectAtIndex:indexPath.item] valueForKey:@"text"];
+    Message *msg = (Message *)[messages objectAtIndex:indexPath.item];
+    cell.messageTextView.text = (NSString *)[msg valueForKey:@"text"];
+//Ref: http://stackoverflow.com/questions/15719681/receiver-type-for-instance-messages-is-a-forward-declaration-in-xcode-4-6
+    
     cell.backgroundColor = [UIColor blueColor];
     
     return cell;
