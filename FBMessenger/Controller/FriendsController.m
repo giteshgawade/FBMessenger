@@ -128,7 +128,7 @@ static NSString * const cellId = @"Cell";
         [self createMessageWithText:@"Good Morning ..." ofFriend:steve minutesAgo:5 context:context]; //  Steve
         [self createMessageWithText:@"How Are You ??" ofFriend:steve minutesAgo:2 context:context]; // Steve
         [self createMessageWithText:@"Apple manufactures smartest phones in the world !!" ofFriend:steve minutesAgo:0 context:context]; // Steve
-        [self createMessageWithText:@"I wanna be next president !!!" ofFriend:donald minutesAgo:5 context:context];
+        [self createMessageWithText:@"I wanna be next president !!!" ofFriend:donald minutesAgo:3 context:context];
         
         // Save the context to save the messages
         @try {
